@@ -37,18 +37,18 @@
 <type label="SET" quote="" sql="SET" length="1"/>
 <type label="Bit" quote="" sql="bit" length="0"/>
 </group>
-</datatypes><table x="857" y="222" name="Band">
+</datatypes><table x="761" y="153" name="Band">
 <row name="BandID" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="BandName" null="1" autoincrement="0">
+<row name="Name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>BandID</part>
 </key>
 </table>
-<table x="418" y="259" name="Member">
+<table x="178" y="218" name="Member">
 <row name="MemberID" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -62,7 +62,7 @@
 <part>MemberID</part>
 </key>
 </table>
-<table x="630" y="138" name="BandMember">
+<table x="485" y="117" name="BandMember">
 <row name="BandMemberID" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -78,12 +78,18 @@
 <part>BandMemberID</part>
 </key>
 </table>
-<table x="1381" y="471" name="Tour">
+<table x="1366" y="316" name="Tour">
 <row name="TourID" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="TourName" null="1" autoincrement="0">
+<row name="Name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="StartDate" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="EndDate" null="1" autoincrement="0">
+<datatype>DATE</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>TourID</part>
@@ -105,7 +111,7 @@
 <part>BandTourID</part>
 </key>
 </table>
-<table x="846" y="560" name="Show">
+<table x="871" y="468" name="Show">
 <row name="ShowID" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -116,11 +122,15 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="Tour" row="TourID" />
 </row>
+<row name="VenueID" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Venue" row="VenueID" />
+</row>
 <key type="PRIMARY" name="">
 <part>ShowID</part>
 </key>
 </table>
-<table x="643" y="415" name="BandShow">
+<table x="652" y="323" name="BandShow">
 <row name="BandShowID" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -136,31 +146,15 @@
 <part>BandShowID</part>
 </key>
 </table>
-<table x="1108" y="435" name="Venue">
+<table x="1203" y="499" name="Venue">
 <row name="VenueID" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="VenueName" null="1" autoincrement="0">
+<row name="Name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>VenueID</part>
-</key>
-</table>
-<table x="1057" y="295" name="ShowVenue">
-<row name="ShowVenueID" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="ShowID" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Show" row="ShowID" />
-</row>
-<row name="VenueID" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Venue" row="VenueID" />
-</row>
-<key type="PRIMARY" name="">
-<part>ShowVenueID</part>
 </key>
 </table>
 </sql>
