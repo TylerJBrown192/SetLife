@@ -41,4 +41,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Custom
 Client/node_modules
+API/SetLife/obj
+API/.vs
